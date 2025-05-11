@@ -23,7 +23,7 @@ Membangun sistem prediktif untuk mengetahui risiko dropout siswa sejak dini.
 
 ### Persiapan
 
-Sumber Data: Dataset Students Performance dari Dicoding ([turunan dari UCI Machine Learning Repository).](https://github.com/dicodingacademy/dicoding_dataset/blob/main/students_performance/README.md)
+Sumber Data: Dataset Students Performance dari Dicoding(https://github.com/dicodingacademy/dicoding_dataset/blob/main/students_performance/README.md)
 Dataset ini mencakup berbagai atribut seperti umur saat masuk, status pembayaran, nilai semester, jenis kelamin, dan beasiswa.
 
 Setup environment:
