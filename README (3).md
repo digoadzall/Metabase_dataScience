@@ -26,11 +26,49 @@ Membangun sistem prediktif untuk mengetahui risiko dropout siswa sejak dini.
 Sumber Data: Dataset Students Performance dari Dicoding ([turunan dari UCI Machine Learning Repository).](https://github.com/dicodingacademy/dicoding_dataset/blob/main/students_performance/README.md)
 Dataset ini mencakup berbagai atribut seperti umur saat masuk, status pembayaran, nilai semester, jenis kelamin, dan beasiswa.
 
-
-
 Setup environment:
 ```
+1. Persiapkan lingkungan Python
+Di Google Colab, kitak tidak usah perlu khawatir tentang mengaktifkan virtual environment. Colab sudah menggunakan Python versi 3.x secara default. kita bisa mengecek versi Python yang sedang digunakan dengan menjalankan perintah ini di Colab:
 
+!python --version
+
+setelah melihat versi 3.7 mari kita lanjutkan ke selanjutnya
+
+2. Install dependensi
+Jalankan perintah berikut di terminal:
+
+pip install pandas scikit-learn joblib seaborn matplotlib
+Jika menggunakan Google Colab, tidak perlu install manual karena library tersebut sudah tersedia.
+
+3. Menjalankan Notebook
+Jalankan notebook Jupyter berikut untuk melakukan analisis dan modeling:
+
+📄 ds_submission2.ipynb
+
+Pastikan file data.csv ada di direktori yang sama sebelum menjalankan notebook.
+
+4. Menjalankan Dashboard di Metabase
+Metabase digunakan untuk membuat dashboard berbasis visualisasi dari data yang sama.
+
+Langkah-langkah:
+
+Pastikan Metabase telah terinstal dan berjalan secara lokal atau di server.
+
+Upload dataset data.csv ke Metabase dan sambungkan sebagai database (bisa menggunakan koneksi file CSV via SQLite atau Postgres).
+
+Buat dashboard dan tambahkan visualisasi-visualisasi berikut:
+
+- Distribusi siswa berdasarkan status (Dropout, Enrolled, Graduate)
+- Dropout berdasarkan gender
+- Distribusi usia saat mendaftar
+- Korelasi nilai akademik semester dengan status siswa
+- Hubungan antara status pembayaran dan beasiswa terhadap dropout
+- Gunakan akun berikut untuk login ke Metabase (opsional jika ingin standardisasi akses):
+
+Username: root@mail.com
+Password: root123
+Dashboard dapat diakses dan digunakan untuk memantau performa siswa serta mengidentifikasi potensi risiko dropout sejak dini.
 ```
 
 ## Business Dashboard
@@ -55,16 +93,32 @@ Visualisasi ini membandingkan jumlah siswa dropout berdasarkan status pembayaran
 
 
 ## Menjalankan Sistem Machine Learning
-Jelaskan cara menjalankan protoype sistem machine learning yang telah dibuat. Selain itu, sertakan juga link untuk mengakses prototype tersebut.
+Model prediktif dibangun menggunakan Random Forest Classifier dari scikit-learn untuk memprediksi status siswa.
 
-```
+Langkah Menjalankan Model:
+1. Jalankan skrip Python model_training.py untuk melakukan pelatihan model.
+2. Model disimpan dalam format .pkl menggunakan joblib:
+joblib.dump(model, 'random_forest_model.pkl')
 
-```
+3. File model dapat digunakan untuk prediksi pada data baru dengan memuat kembali model:
+model = joblib.load('random_forest_model.pkl')
 
 ## Conclusion
-Jelaskan konklusi dari proyek yang dikerjakan.
+Berdasarkan eksplorasi data dan hasil model:
+- Sebagian besar siswa yang dropout memiliki nilai akademik rendah di semester awal dan memiliki status pembayaran tertunda.
+- Umur saat mendaftar dan status beasiswa juga memengaruhi kemungkinan dropout.
+- Model prediksi (Random Forest) menunjukkan performa baik dalam mengklasifikasikan status siswa dan dapat digunakan sebagai dasar sistem peringatan dini.
+- Dashboard memberikan wawasan penting secara visual bagi manajemen untuk mengambil tindakan tepat waktu.
 
 ### Rekomendasi Action Items
-Berikan beberapa rekomendasi action items yang harus dilakukan perusahaan guna menyelesaikan permasalahan atau mencapai target mereka.
-- action item 1
-- action item 2
+Action Item 1:
+Buat program pendampingan belajar bagi siswa yang memiliki nilai rendah di semester awal.
+
+Action Item 2:
+Sediakan skema bantuan pembayaran atau cicilan bagi siswa dengan status pembayaran tertunda agar tidak dropout karena alasan finansial.
+
+Action Item 3:
+Gunakan dashboard secara rutin oleh manajemen untuk mengidentifikasi siswa dengan risiko tinggi berdasarkan data terbaru.
+
+Action Item 4:
+Kembangkan sistem peringatan berbasis model prediktif internal agar tindakan preventif dapat diambil sebelum siswa keluar.
