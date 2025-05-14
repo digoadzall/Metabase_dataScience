@@ -103,6 +103,9 @@ joblib.dump(model, 'random_forest_model.pkl')
 3. File model dapat digunakan untuk prediksi pada data baru dengan memuat kembali model:
 model = joblib.load('random_forest_model.pkl')
 
+## Meng-Akses Prototype
+https://metabasedatascience-ttblodrtssre4yfqkbdlux.streamlit.app/
+
 ## Conclusion
 Berdasarkan eksplorasi data dan hasil model:
 - Sebagian besar siswa yang dropout memiliki nilai akademik rendah di semester awal dan memiliki status pembayaran tertunda.
