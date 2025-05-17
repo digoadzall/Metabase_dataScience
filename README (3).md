@@ -23,8 +23,21 @@ Membangun sistem prediktif untuk mengetahui risiko dropout siswa sejak dini.
 
 ### Persiapan
 
-Sumber Data: Dataset Students Performance dari Dicoding(https://github.com/dicodingacademy/dicoding_dataset/blob/main/students_performance/README.md)
-Dataset ini mencakup berbagai atribut seperti umur saat masuk, status pembayaran, nilai semester, jenis kelamin, dan beasiswa.
+Sumber Data
+Dataset yang digunakan adalah Students Performance dari Dicoding, yang mencakup atribut seperti:
+
+Umur saat masuk kuliah
+
+Status pembayaran
+
+Nilai semester 1 dan 2
+
+Jenis kelamin
+
+Status beasiswa
+
+Sumber data dapat diakses melalui link berikut:
+🔗https://github.com/dicodingacademy/dicoding_dataset/blob/main/students_performance/data.csv
 
 Setup environment:
 ```
@@ -34,6 +47,18 @@ Di Google Colab, kitak tidak usah perlu khawatir tentang mengaktifkan virtual en
 !python --version
 
 setelah melihat versi 3.7 mari kita lanjutkan ke selanjutnya
+
+Namun, jika perlu, bisa diinstal ulang dengan:
+
+python
+Salin
+Edit
+!pip install pandas scikit-learn joblib seaborn matplotlib
+
+Opsi 2: Local Machine (Anaconda)
+conda create --name main-ds python=3.9
+conda activate main-ds
+pip install -r requirements.txt
 
 2. Install dependensi
 Jalankan perintah berikut di terminal:
