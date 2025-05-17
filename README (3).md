@@ -129,6 +129,17 @@ joblib.dump(model, 'random_forest_model.pkl')
 model = joblib.load('random_forest_model.pkl')
 
 ## Meng-Akses Prototype
+Prototype sistem ini telah dibangun menggunakan Streamlit, sebuah framework Python untuk membuat aplikasi berbasis web interaktif.
+
+Cara Menjalankan Prototype (Secara Lokal)
+Jika ingin menjalankan prototipe di lokal:
+
+Pastikan streamlit telah terinstal:
+pip install streamlit
+
+Jalankan aplikasi:
+streamlit run app_siswa.py
+link :
 https://metabasedatascience-ttblodrtssre4yfqkbdlux.streamlit.app/
 
 ## Conclusion
